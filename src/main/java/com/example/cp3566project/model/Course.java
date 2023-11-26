@@ -3,7 +3,7 @@ package com.example.cp3566project.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "courses") // This tells Hibernate to make a table out of this class
+@Table(name = "courses")
 public class Course {
 
     @Id
@@ -14,5 +14,27 @@ public class Course {
     private String courseNumber;
     private Integer capacity;
 
-    // Constructors, Getters, and Setters will go here
+    public Course() {}
+
+    public Long getCourseId() { return courseId; }
+    public void setCourseId(Long courseId) { this.courseId = courseId; }
+
+    public String getCourseName() { return courseName; }
+    public void setCourseName(String courseName) { this.courseName = courseName; }
+
+    public String getCourseNumber() { return courseNumber; }
+    public void setCourseNumber(String courseNumber) { this.courseNumber = courseNumber; }
+
+    public int getCapacity() { return capacity; }
+    public void setCapacity(int capacity) { this.capacity = capacity; }
+
+    @Override
+    public String toString() {
+        return "Course{" +
+                "courseId=" + courseId +
+                ", courseName='" + courseName + '\'' +
+                ", courseNumber='" + courseNumber + '\'' +
+                ", capacity=" + capacity +
+                '}';
+    }
 }
