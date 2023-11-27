@@ -1,0 +1,30 @@
+### Post a new student
+POST http://localhost:8080/student
+Content-Type: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Joe"
+}
+
+### Post a new course
+POST http://localhost:8080/course
+Content-Type: application/json
+
+{
+  "courseName": "Physics Fundamentals",
+  "courseNumber": "202",
+  "capacity": 50
+}
+
+### Get all students
+GET http://localhost:8080/student
+
+### Get all courses
+GET http://localhost:8080/course
+
+### Get a single student by ID
+GET http://localhost:8080/student/1
+
+### Get a single course by ID
+GET http://localhost:8080/course/4

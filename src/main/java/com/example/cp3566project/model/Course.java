@@ -12,6 +12,7 @@ public class Course {
 
     private String courseName;
     private String courseNumber;
+    @Column(nullable = true)
     private Integer capacity;
 
     public Course() {}
@@ -25,7 +26,7 @@ public class Course {
     public String getCourseNumber() { return courseNumber; }
     public void setCourseNumber(String courseNumber) { this.courseNumber = courseNumber; }
 
-    public int getCapacity() { return capacity; }
+    public int getCapacity() { return capacity != null ? capacity : 0; }
     public void setCapacity(int capacity) { this.capacity = capacity; }
 
     @Override

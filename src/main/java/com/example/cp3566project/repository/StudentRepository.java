@@ -6,6 +6,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface StudentRepository extends JpaRepository<Student, Long> {
-    // You can add custom methods if needed, for example:
-    // List<Student> findByLastName(String lastName);
 }
