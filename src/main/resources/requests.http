@@ -1,4 +1,4 @@
-### Post a new student
+### Post a new student. change each time to avoid duplicates
 POST http://localhost:8080/student
 Content-Type: application/json
 
@@ -7,7 +7,7 @@ Content-Type: application/json
   "lastName": "Joe"
 }
 
-### Post a new course
+### Post a new course. change each time to avoid duplicates
 POST http://localhost:8080/course
 Content-Type: application/json
 
@@ -23,8 +23,8 @@ GET http://localhost:8080/student
 ### Get all courses
 GET http://localhost:8080/course
 
-### Get a single student by ID
+### Get a single student by ID. Change id number to get different results
 GET http://localhost:8080/student/1
 
-### Get a single course by ID
+### Get a single course by ID. Change id number to get differnt results
 GET http://localhost:8080/course/4
