@@ -4,7 +4,12 @@ Content-Type: application/json
 
 {
   "firstName": "John",
-  "lastName": "Joe"
+  "lastName": "Joe",
+  "email": "tylerpiercey@email.com",
+  "address": "29 fake road",
+  "city": "town",
+  "postal": "A0B 1C2",
+  "phone": "7097775555"
 }
 
 ### Post a new course.
@@ -12,9 +17,12 @@ POST http://localhost:8080/course
 Content-Type: application/json
 
 {
-  "courseName": "Physics Fundamentals",
-  "courseNumber": "202",
-  "capacity": 50
+  "courseName": "language",
+  "courseNumber": "1",
+  "capacity": 100,
+  "year": 2020,
+  "semester": 3,
+  "pid": 40
 }
 
 ### Get all students
@@ -90,7 +98,7 @@ Content-Type: application/json
 }
 
 ### Delete a student record
-DELETE http://localhost:8080/student/2
+DELETE http://localhost:8080/student/1
 
 ### Modify a course
 PUT http://localhost:8080/course/1
@@ -99,7 +107,10 @@ Content-Type: application/json
 {
   "courseName": "language",
   "courseNumber": "1",
-  "capacity": 100
+  "capacity": 100,
+  "year": 2020,
+  "semester": 3,
+  "pid": 1
 }
 
 ### Delete a course
@@ -110,15 +121,15 @@ PUT http://localhost:8080/program/1
 Content-Type: application/json
 
 {
-  "programName": "Modified Program Name",
-  "campus": "Modified Campus"
+  "programName": "language",
+  "campus": "CNA"
 }
 
 ### Delete a program
 DELETE http://localhost:8080/program/1
 
 ### Modify an enrollment
-PUT http://localhost:8080/enrollment/
+PUT http://localhost:8080/enrollment/1
 Content-Type: application/json
 
 {
