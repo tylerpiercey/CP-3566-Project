@@ -24,7 +24,120 @@ GET http://localhost:8080/student
 GET http://localhost:8080/course
 
 ### Get a single student by ID. Change id number to get different results
-GET http://localhost:8080/student/1
+GET http://localhost:8080/student/28
 
 ### Get a single course by ID. Change id number to get differnt results
-GET http://localhost:8080/course/4
+GET http://localhost:8080/course/8
+
+### Post a new program
+POST http://localhost:8080/api/cna/program
+Content-Type: application/json
+
+{
+  "programName": "Applied Physics",
+  "campus": "Main Campus"
+}
+
+### Get all programs
+GET http://localhost:8080/api/cna/program
+
+### Get a single program by ID. Change id number to get different results
+GET http://localhost:8080/api/cna/program/1
+
+### Post a new enrollment
+POST http://localhost:8080/api/cna/enrollment
+Content-Type: application/json
+
+{
+  "courseId": 1,
+  "studentId": 1
+}
+
+### Get all enrollments for a course
+GET http://localhost:8080/api/cna/enrollment/course/1
+
+### Get all enrollments for a student
+GET http://localhost:8080/api/cna/enrollment/student/1
+
+### Post a new grade
+POST http://localhost:8080/api/cna/grades
+Content-Type: application/json
+
+{
+  "studentId": 1,
+  "courseId": 1,
+  "grade": "A"
+}
+
+### Get all grades for a student
+GET http://localhost:8080/api/cna/grades/student/1
+
+### Get all grades for a course
+GET http://localhost:8080/api/cna/grades/course/1
+
+### Modify a student record
+PUT http://localhost:8080/student/{id}
+Content-Type: application/json
+
+{
+  "firstName": "ModifiedFirstName",
+  "lastName": "ModifiedLastName",
+  "email": "modifiedemail@email.com",
+  "address": "Modified Address",
+  "city": "Modified City",
+  "postal": "ModifiedPostal",
+  "phone": "ModifiedPhone"
+}
+
+### Delete a student record
+DELETE http://localhost:8080/student/20
+
+### Modify a course
+PUT http://localhost:8080/course/{id}
+Content-Type: application/json
+
+{
+  "courseName": "Modified Course Name",
+  "courseNumber": "ModifiedCourseNumber",
+  "capacity": 100
+}
+
+### Delete a course
+DELETE http://localhost:8080/course/{id}
+
+### Modify a program
+PUT http://localhost:8080/api/cna/program/{id}
+Content-Type: application/json
+
+{
+  "programName": "Modified Program Name",
+  "campus": "Modified Campus"
+}
+
+### Delete a program
+DELETE http://localhost:8080/api/cna/program/4
+
+### Modify an enrollment
+PUT http://localhost:8080/api/cna/enrollment/{id}
+Content-Type: application/json
+
+{
+  "courseId": 2,
+  "studentId": 3
+}
+
+### Delete an enrollment
+DELETE http://localhost:8080/api/cna/enrollment/3
+
+### Modify a grade
+PUT http://localhost:8080/api/cna/grades/1
+Content-Type: application/json
+
+{
+  "studentId": 1,
+  "courseId": 2,
+  "grade": "B"
+}
+
+### Delete a grade
+DELETE http://localhost:8080/api/cna/grades/{id}

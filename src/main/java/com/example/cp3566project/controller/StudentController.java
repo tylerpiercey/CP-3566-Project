@@ -34,4 +34,34 @@ public class StudentController {
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
+
+    // Modify a student
+    @PutMapping("/{id}")
+    public ResponseEntity<Student> updateStudent(@PathVariable Long id, @RequestBody Student studentDetails) {
+        return studentRepository.findById(id)
+                .map(student -> {
+                    student.setFirstName(studentDetails.getFirstName());
+                    student.setLastName(studentDetails.getLastName());
+                    student.setEmail(studentDetails.getEmail());
+                    student.setAddress(studentDetails.getAddress());
+                    student.setCity(studentDetails.getCity());
+                    student.setPostal(studentDetails.getPostal());
+                    student.setPhone(studentDetails.getPhone());
+                    return ResponseEntity.ok(studentRepository.save(student));
+                })
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+    // Delete a student
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteStudent(@PathVariable Long id) {
+        return studentRepository.findById(id)
+                .map(student -> {
+                    studentRepository.delete(student);
+                    return ResponseEntity.ok().build();
+                })
+                .orElse(ResponseEntity.notFound().build());
+    }
+
 }
+
