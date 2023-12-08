@@ -1,4 +1,4 @@
-### Post a new student. change each time to avoid duplicates
+### Post a new student.
 POST http://localhost:8080/student
 Content-Type: application/json
 
@@ -7,7 +7,7 @@ Content-Type: application/json
   "lastName": "Joe"
 }
 
-### Post a new course. change each time to avoid duplicates
+### Post a new course.
 POST http://localhost:8080/course
 Content-Type: application/json
 
@@ -23,14 +23,14 @@ GET http://localhost:8080/student
 ### Get all courses
 GET http://localhost:8080/course
 
-### Get a single student by ID. Change id number to get different results
-GET http://localhost:8080/student/28
+### Get a single student by ID.
+GET http://localhost:8080/student/20
 
-### Get a single course by ID. Change id number to get differnt results
-GET http://localhost:8080/course/8
+### Get a single course by ID.
+GET http://localhost:8080/course/4
 
 ### Post a new program
-POST http://localhost:8080/api/cna/program
+POST http://localhost:8080/program
 Content-Type: application/json
 
 {
@@ -39,13 +39,13 @@ Content-Type: application/json
 }
 
 ### Get all programs
-GET http://localhost:8080/api/cna/program
+GET http://localhost:8080/program
 
 ### Get a single program by ID. Change id number to get different results
-GET http://localhost:8080/api/cna/program/1
+GET http://localhost:8080/program/6
 
 ### Post a new enrollment
-POST http://localhost:8080/api/cna/enrollment
+POST http://localhost:8080/enrollment
 Content-Type: application/json
 
 {
@@ -54,13 +54,13 @@ Content-Type: application/json
 }
 
 ### Get all enrollments for a course
-GET http://localhost:8080/api/cna/enrollment/course/1
+GET http://localhost:8080/enrollment/course/1
 
 ### Get all enrollments for a student
-GET http://localhost:8080/api/cna/enrollment/student/1
+GET http://localhost:8080/enrollment/student/1
 
 ### Post a new grade
-POST http://localhost:8080/api/cna/grades
+POST http://localhost:8080/grades
 Content-Type: application/json
 
 {
@@ -70,43 +70,43 @@ Content-Type: application/json
 }
 
 ### Get all grades for a student
-GET http://localhost:8080/api/cna/grades/student/1
+GET http://localhost:8080/grades/student/2
 
 ### Get all grades for a course
-GET http://localhost:8080/api/cna/grades/course/1
+GET http://localhost:8080/grades/course/1
 
 ### Modify a student record
-PUT http://localhost:8080/student/{id}
+PUT http://localhost:8080/student/1
 Content-Type: application/json
 
 {
-  "firstName": "ModifiedFirstName",
-  "lastName": "ModifiedLastName",
-  "email": "modifiedemail@email.com",
-  "address": "Modified Address",
-  "city": "Modified City",
-  "postal": "ModifiedPostal",
-  "phone": "ModifiedPhone"
+  "firstName": "tyler",
+  "lastName": "piercey",
+  "email": "tylerpiercey@email.com",
+  "address": "29 fake road",
+  "city": "town",
+  "postal": "A0B 1C2",
+  "phone": "7097775555"
 }
 
 ### Delete a student record
-DELETE http://localhost:8080/student/20
+DELETE http://localhost:8080/student/2
 
 ### Modify a course
-PUT http://localhost:8080/course/{id}
+PUT http://localhost:8080/course/1
 Content-Type: application/json
 
 {
-  "courseName": "Modified Course Name",
-  "courseNumber": "ModifiedCourseNumber",
+  "courseName": "language",
+  "courseNumber": "1",
   "capacity": 100
 }
 
 ### Delete a course
-DELETE http://localhost:8080/course/{id}
+DELETE http://localhost:8080/course/1
 
 ### Modify a program
-PUT http://localhost:8080/api/cna/program/{id}
+PUT http://localhost:8080/program/1
 Content-Type: application/json
 
 {
@@ -115,10 +115,10 @@ Content-Type: application/json
 }
 
 ### Delete a program
-DELETE http://localhost:8080/api/cna/program/4
+DELETE http://localhost:8080/program/1
 
 ### Modify an enrollment
-PUT http://localhost:8080/api/cna/enrollment/{id}
+PUT http://localhost:8080/enrollment/
 Content-Type: application/json
 
 {
@@ -127,10 +127,10 @@ Content-Type: application/json
 }
 
 ### Delete an enrollment
-DELETE http://localhost:8080/api/cna/enrollment/3
+DELETE http://localhost:8080/enrollment/3
 
 ### Modify a grade
-PUT http://localhost:8080/api/cna/grades/1
+PUT http://localhost:8080/grades/1
 Content-Type: application/json
 
 {
@@ -140,4 +140,4 @@ Content-Type: application/json
 }
 
 ### Delete a grade
-DELETE http://localhost:8080/api/cna/grades/{id}
+DELETE http://localhost:8080/grades/1
